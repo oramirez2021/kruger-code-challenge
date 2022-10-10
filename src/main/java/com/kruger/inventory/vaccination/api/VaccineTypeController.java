@@ -3,6 +3,7 @@ package com.kruger.inventory.vaccination.api;
 import com.kruger.inventory.vaccination.model.VaccineType;
 import com.kruger.inventory.vaccination.service.VaccineTypeService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ public class VaccineTypeController {
     @PostMapping("/vaccinetype")
     @Operation(
             tags ="Vaccine Controllers",
-            description = "Shows a certain type of Vaccine by the code of Vaccine"
+            description = "This endpoint will crate a new Vaccine type into the DataBase"
     )
     public ResponseEntity<VaccineType> createVaccineType(@RequestBody @Valid VaccineType vaccineType){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/vaccinetype").toUriString());
@@ -41,7 +42,7 @@ public class VaccineTypeController {
     @PutMapping("/vaccinetype")
     @Operation(
             tags ="Vaccine Controllers",
-            description = "Shows a certain type of Vaccine by the code of Vaccine"
+            description = "This endpoint will update a certain Vaccine type"
     )
     public ResponseEntity<VaccineType> updateVaccineType(@RequestBody @Valid VaccineType vaccineType){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/vaccinetype").toUriString());
@@ -56,7 +57,8 @@ public class VaccineTypeController {
     @DeleteMapping("/vaccinetype")
     @Operation(
             tags ="Vaccine Controllers",
-            description = "Shows a certain type of Vaccine by the code of Vaccine"
+            description = "This endopoint allows us to eliminate a certain Vaccine Type",
+            parameters = {@Parameter(name = "codType",description = "Input a Code Vaccine Type to eliminate of the Database. e.g. 2")}
     )
     public ResponseEntity<VaccineType> eliminateVaccineType(@RequestParam int codType){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/vaccinetype").toUriString());
@@ -72,7 +74,7 @@ public class VaccineTypeController {
     @GetMapping("/listVaccineTypes")
     @Operation(
             tags ="Vaccine Controllers",
-            description = "Shows all the Types of Vaccines those the Company handle"
+            description = "this endpoint lists the Vaccine types that are recorded in the gross system"
     )
     public ResponseEntity<List<VaccineType>> getVaccineTypes(){
         return ResponseEntity.ok().body(vaccineTypeService.obtainListVaccineTypes());

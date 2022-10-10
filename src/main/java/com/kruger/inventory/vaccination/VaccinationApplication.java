@@ -14,8 +14,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 					tags = {@Tag(name = "Vaccine Controllers",description = "Maintaining and Quering the Vaccines handled by the Companny Kruger"),
 					@Tag(name = "Employee Controllers",description = "Maintaining and Quering the Employees of the Kruger Companny")
 					}
-
-
 					)
 public class VaccinationApplication {
 

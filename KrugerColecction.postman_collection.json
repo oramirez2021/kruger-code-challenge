@@ -21,7 +21,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"typDes\":\"pfizer\",\n    \"typSta\":\"A\"\n}",
+					"raw": "                                                    {\n    \"typDes\":\"pfizer\",\n    \"typSta\":\"A\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -58,7 +58,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"identification\":\"2195331137\",\n    \"doseNumb\":\"1\",\n    \"mail\":\"ojramirezv@gmail.com\",\n    \"names\":\"OMAR\",\n    \"sureNames\":\"RAMIREZ\",\n    \"vacDate\":\"2022-10-10\",\n    \"vacState\":\"SI\",\n    \"codType\":{\"codType\":1,\"typDes\": \"Pfizer\",\n            \"typSta\": \"A\"},\n    \"idUsuario\":1\n}",
+					"raw": "{\n    \"identification\":\"1221332117\",\n    \"doseNumb\":\"1\",\n    \"mail\":\"ojramirezv@gmail.com\",\n    \"names\":\"JONATHAN\",\n    \"sureNames\":\"RAMIREZ\",\n    \"vacDate\":\"2022-10-10\",\n    \"vacState\":\"NO\",\n    \"codType\":{\"codType\":1,\"typDes\": \"Pfizer\",\n            \"typSta\": \"A\"},\n    \"idUsuario\":null\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -95,7 +95,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"identification\":\"1953318257\",\n    \"doseNumb\":\"1\",\n    \"mail\":\"ojramirezv1@gmail.com\",\n    \"names\":\"OMAR\",\n    \"sureNames\":\"VARGAS\",\n    \"vacDate\":\"2022-10-10\",\n    \"vacState\":\"NO\",\n    \"codType\":{\"codType\":1,\"typDes\": \"Pfizer\",\n            \"typSta\": \"A\"},\n    \"idUsuario\":1\n}",
+					"raw": "{\n    \"identification\":\"2221331117\",\n    \"doseNumb\":\"1\",\n    \"mail\":\"ojramirezv1@gmail.com\",\n    \"names\":\"RENZO\",\n    \"sureNames\":\"RAMIREZ VARGAS\",\n    \"vacDate\":\"2022-10-10\",\n    \"vacState\":\"NO\",\n    \"codType\":{\"codType\":1,\"typDes\": \"Pfizer\",\n            \"typSta\": \"a\"},\n    \"id\":{\"id\":3,\"userName\":\"reramire24\",\"password\":\"ecG4oFr\"}\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -140,7 +140,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/employee?identification=2195331137",
+					"raw": "http://localhost:8080/api/employee?identification=2221331117",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -153,7 +153,7 @@
 					"query": [
 						{
 							"key": "identification",
-							"value": "2195331137"
+							"value": "2221331117"
 						}
 					]
 				}
@@ -264,7 +264,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/listEmployeeByVaccState?vaccState=NO",
+					"raw": "http://localhost:8080/api/listEmployeeByVaccSate?vaccState=SI",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -272,12 +272,12 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"listEmployeeByVaccState"
+						"listEmployeeByVaccSate"
 					],
 					"query": [
 						{
 							"key": "vaccState",
-							"value": "NO"
+							"value": "SI"
 						}
 					]
 				}
