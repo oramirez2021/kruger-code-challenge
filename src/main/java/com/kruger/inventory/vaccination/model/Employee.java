@@ -38,7 +38,7 @@ public class Employee {
     private String vacState;
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull(message = "Vaccination type is mandatory")
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "codType", referencedColumnName = "codType")
     private VaccineType codType;
     @Column(name = "vacDate", nullable = false)
@@ -50,7 +50,7 @@ public class Employee {
     @Pattern(regexp = "^[0-9]*$", message = "Identification must contains just numeric digicts")
     private String doseNumb;
     //@NotNull(message = "User's ID is mandatory")
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id", referencedColumnName = "id")
     private Users id;
 }

@@ -1,5 +1,6 @@
 package com.kruger.inventory.vaccination.service;
 
+import com.kruger.inventory.vaccination.custom.exception.IdentificationEmployeeAlreadyExistsException;
 import com.kruger.inventory.vaccination.model.Employee;
 import com.kruger.inventory.vaccination.model.VaccineType;
 import com.kruger.inventory.vaccination.repository.EmployeeRepo;
@@ -28,7 +29,8 @@ public class EmployeeServiceImp  implements EmployeeService{
 
     @Override
     public Employee createEmployee(Employee employee) {
-        return employeeRepo.save(employee);
+        Employee employeeRes = employeeRepo.save(employee);
+        return employeeRes;
     }
 
     @Override
