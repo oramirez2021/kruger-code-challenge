@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "8a2858f7-cc10-4764-8587-dbd51ac4f6be",
+		"name": "KrugerColecction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17399269"
+	},
+	"item": [
+		{
+			"name": "Crear un tipo de vacuna",
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"disabledSystemHeaders": {},
+				"followRedirects": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typDes\":\"pfizer\",\n    \"typSta\":\"A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vaccinetype",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vaccinetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un empleado",
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"disabledSystemHeaders": {},
+				"followRedirects": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identification\":\"2195331137\",\n    \"doseNumb\":\"1\",\n    \"mail\":\"ojramirezv@gmail.com\",\n    \"names\":\"OMAR\",\n    \"sureNames\":\"RAMIREZ\",\n    \"vacDate\":\"2022-10-10\",\n    \"vacState\":\"SI\",\n    \"codType\":{\"codType\":1,\"typDes\": \"Pfizer\",\n            \"typSta\": \"A\"},\n    \"idUsuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un empleado",
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"disabledSystemHeaders": {},
+				"followRedirects": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identification\":\"1953318257\",\n    \"doseNumb\":\"1\",\n    \"mail\":\"ojramirezv1@gmail.com\",\n    \"names\":\"OMAR\",\n    \"sureNames\":\"VARGAS\",\n    \"vacDate\":\"2022-10-10\",\n    \"vacState\":\"NO\",\n    \"codType\":{\"codType\":1,\"typDes\": \"Pfizer\",\n            \"typSta\": \"A\"},\n    \"idUsuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un empleado",
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"disabledSystemHeaders": {},
+				"followRedirects": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee?identification=2195331137",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "identification",
+							"value": "2195331137"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un tipo de vacuna",
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"disabledSystemHeaders": {},
+				"followRedirects": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codType\":2,\n    \"typDes\":\"omar\",\n    \"typSta\":\"A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vaccinetype",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vaccinetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un tipo de vacuna",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vaccinetype?codType=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vaccinetype"
+					],
+					"query": [
+						{
+							"key": "codType",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar los empleados por el tipo de vacuna",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/listEmployeeByCodType?codType=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"listEmployeeByCodType"
+					],
+					"query": [
+						{
+							"key": "codType",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar los empleados por estado de vacunación",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/listEmployeeByVaccState?vaccState=NO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"listEmployeeByVaccState"
+					],
+					"query": [
+						{
+							"key": "vaccState",
+							"value": "NO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar los empleados por rango de fecha de vacunación",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/listEmployeeByVaccDateRange?fecIni=2022-10-05&fecFin=2022-10-23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"listEmployeeByVaccDateRange"
+					],
+					"query": [
+						{
+							"key": "fecIni",
+							"value": "2022-10-05"
+						},
+						{
+							"key": "fecFin",
+							"value": "2022-10-23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos los tipos de vacunas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/listVaccineTypes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"listVaccineTypes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
