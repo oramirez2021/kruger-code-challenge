@@ -36,9 +36,9 @@ El lenguaje usado es Java 17 usando Spring boot. En este caso he usado Linux Ubu
     spring.datasource.username=omar
     spring.datasource.password=Gencooil$2022
     
- **3. Compilar la aplicación. En este caso compilar utilizando el IDE IntelliJ IDEA.**
+**3. Compilar la aplicación. En este caso compilar utilizando el IDE IntelliJ IDEA.**
  
- **4. Ejecutar la aplicación asegurandose que Postgresql esté escuchando en su puerto configurado:
+**4. Ejecutar la aplicación asegurandose que Postgresql esté escuchando en su puerto configurado:
       Parar ejecutar el jar, hay que ubicarse en la ruta donde se encuentre el artefacto y ejecutar el siguiente comandoÑ
       
       java -jar vaccination-0.0.1-SNAPSHOT.jar
@@ -68,5 +68,18 @@ Pasos:
 
 	        docker run -p 8080:8080 mi_kruger_challenge
 
+**6. Documentación. SWAGGER: **<br>
+Teniendo levantada la aplicación, acceder a la DocumentaciónÑ
+
+	http://localhost:8080/swagger-ui/index.html
+	
+	
+**7. Restaurar en su equipo todos los consumos de los endpoints para que pueda hacer la prueba de los mismos. Postman:**<br>
+	7.1. Importar el json KrugerColecction.postman_collection.json (collection) que se encuentra en la raiz de la carpeta del proyectoen Postman, para poder hacerlos consumos.
+	
+	
+	
+	
+	
 
 
