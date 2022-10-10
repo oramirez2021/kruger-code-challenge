@@ -14,7 +14,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+/**
+ * This class will implement the functionality from the UserService Interface
+ */
 @Service @RequiredArgsConstructor @Transactional @Slf4j
 public class UsersServiceImp implements UsersService {
     private final UsersRepo usersRepo;
@@ -25,23 +27,6 @@ public class UsersServiceImp implements UsersService {
     }
 
     private final RoleRepo roleRepo;
-    //private final PasswordEncoder passwordEncoder;
-    /*@Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users usuario = usuarioRepo.findByUserName(username);
-        if (usuario == null) {
-            log.error("Usuario no encontrado");
-            throw new UsernameNotFoundException("Usuario no encontrado");
-        } else {
-            log.info("Usuario encontrado en la base de datos: {} ", username);
-        }
-        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        usuario.getRoles().forEach(rol -> {
-            authorities.add(new SimpleGrantedAuthority(rol.getName()));
-        });
-        return new org.springframework.security.core.userdetails.User(usuario.getUserName(), usuario.getPassword(), authorities);
-    }
-*/
     @Override
     public Users createUser(Users user) {
         log.info("Creating a new user {} in the DataBase", user.getUserName());

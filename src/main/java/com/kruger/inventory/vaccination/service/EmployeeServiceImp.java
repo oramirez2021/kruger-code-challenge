@@ -12,6 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
+/**
+ * This class will implement the functionality from the EmployeeService Interface
+ */
 @Slf4j @AllArgsConstructor @Service @Transactional
 public class EmployeeServiceImp  implements EmployeeService{
     private final EmployeeRepo employeeRepo;

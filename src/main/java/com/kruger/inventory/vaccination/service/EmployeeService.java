@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class sets the functionality the class will have
+ */
 public interface EmployeeService {
     Employee createEmployee(Employee employee);
     Employee updateEmployee(Employee employee);

@@ -4,7 +4,9 @@ import com.kruger.inventory.vaccination.model.Users;
 
 
 import java.util.List;
-
+/**
+ * This class sets the functionality the class will have
+ */
 public interface UsersService {
     Users createUser(Users users);
     Role createRole(Role rol);

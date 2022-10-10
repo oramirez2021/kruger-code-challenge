@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+/**
+ * This class will implement the functionality from the VaccineTypeService Interface
+ */
 @RequiredArgsConstructor @Service @Transactional @Slf4j
 public class VaccineTypeServiceImp implements VaccineTypeService{
     private final VaccineTypeRepo vaccineTypeRepo;

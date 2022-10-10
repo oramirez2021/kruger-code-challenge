@@ -20,10 +20,20 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class allows us to implement the rest endpoints
+ * that will be able to handle the CRUD and some filters needed
+ */
 @RestController @RequestMapping("/api") @RequiredArgsConstructor @Slf4j
 public class EmployeeController {
     private final EmployeeService employeeService;
     private final UsersService usersService;
+
+    /**
+     * This endpoint will create a new Employee
+     * @param employee receive the employee object that will be deserialized
+     * @return and Entity
+     */
     @PostMapping("/employee")
     @Operation(
             tags ="Vaccine Controllers",
@@ -45,6 +55,11 @@ public class EmployeeController {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/employee").toUriString());
         return ResponseEntity.created(uri).body(employeeService.createEmployee(employee));
     }
+    /**
+     * This endpoint will update de date of a certain Employee
+     * @param employee receive the employee object with the needed data to update that will be deserialized
+     * @return and Entity
+     */
     @PutMapping("/employee")
     @Operation(
             tags ="Vaccine Controllers",
@@ -54,6 +69,12 @@ public class EmployeeController {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/employee").toUriString());
         return ResponseEntity.created(uri).body(employeeService.updateEmployee(employee));
     }
+
+    /**
+     * This endpoint allows us to eliminate a certain Employee by the identification
+     * @param identification the identification of the Employee to eliminate
+     * @return and Entity
+     */
     @DeleteMapping("/employee")
     @Operation(
             tags ="Vaccine Controllers",
@@ -65,7 +86,13 @@ public class EmployeeController {
         employeeService.deleteEmployee(identification);
         return ResponseEntity.created(uri).body(employee);
     }
-   @Operation(
+
+    /**
+     * This endpoint list in json format the list of Employees by the Vaccination state (SI/NO)
+     * @param vaccState  the state to look for
+     * @return and List of Employees
+     */
+    @Operation(
             tags ="Employee Controllers",
            description = "Shows up a list of Employees those got or not the shot"
     )
@@ -73,6 +100,11 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeService.obtainListByVaccinationState(vaccState));
     }
 
+    /**
+     * This endpoint lists the Employees by the Vaccine brand of type
+     * @param codType the Vaccine brand code
+     * @return a list of Employees
+     */
     @GetMapping("/listEmployeeByCodType")
     @Operation(
             tags ="Employee Controllers",
@@ -82,6 +114,12 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeService.obtainListByVaccineType(codType));
     }
 
+    /**
+     * this endpoint lists the Employees that were vaccinated in a certain range of dates
+     * @param fecIni the init date
+     * @param fecFin the end date
+     * @return a list of Employees
+     */
     @GetMapping("/listEmployeeByVaccDateRange")
     @Operation(
             tags ="Employee Controllers",

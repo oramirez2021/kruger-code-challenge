@@ -16,12 +16,13 @@ import java.util.List;
 
 @RestController @RequestMapping("/api") @RequiredArgsConstructor @Slf4j
 public class VaccineTypeController {
-    /** CRUD
-     * PUT to insert a row into the model
-     * DELETE to eliminate a row from the model
-     * UPDATE to update a row of the model
-     * **/
     private final VaccineTypeService vaccineTypeService;
+
+    /**
+     * This endpoint will create a new Vaccine type in DB
+     * @param vaccineType gets the Vaccine Entity to deserialize
+     * @return a Vaccine type entity
+     */
     @PostMapping("/vaccinetype")
     @Operation(
             tags ="Vaccine Controllers",
@@ -31,6 +32,12 @@ public class VaccineTypeController {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/vaccinetype").toUriString());
         return ResponseEntity.created(uri).body(vaccineTypeService.createVaccineType(vaccineType));
     }
+
+    /**
+     * This endpoint will update the specific data to Vaccine type entity
+     * @param vaccineType receive the Vaccine type entity from request
+     * @return a Vaccine Type entity
+     */
     @PutMapping("/vaccinetype")
     @Operation(
             tags ="Vaccine Controllers",
@@ -40,6 +47,12 @@ public class VaccineTypeController {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/vaccinetype").toUriString());
         return ResponseEntity.created(uri).body(vaccineTypeService.updateVaccineType(vaccineType));
     }
+
+    /**
+     * This endopoint allows us to eliminate a certain Vaccine Type
+     * @param codType the id of the Vaccine type to eliminate
+     * @return a Vaccine type entity
+     */
     @DeleteMapping("/vaccinetype")
     @Operation(
             tags ="Vaccine Controllers",
@@ -52,6 +65,10 @@ public class VaccineTypeController {
         return ResponseEntity.created(uri).body(vaccineType);
     }
 
+    /**
+     * this endpoint lists the Vaccine types that are recorded in the gross system
+     * @return a list of Vaccine type Entity
+     */
     @GetMapping("/listVaccineTypes")
     @Operation(
             tags ="Vaccine Controllers",

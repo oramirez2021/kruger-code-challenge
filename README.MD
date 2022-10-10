@@ -6,7 +6,7 @@ CODING CHALLENGE VACCINATION
 Este coding challenge consiste en exponer una serie de endpoints para controlar la vacunación del personal de una determinada empresa en este caso Kruger.;br:
 El lenguaje usado es Java 17 usando Spring boot. En este caso he usado Linux Ubuntu.
 
-1.- **Crear el ambiente Postgresql:**
+**1.- Crear el ambiente Postgresql:**
 
     1.1. Se debe instalar Postgresql.
 
@@ -38,7 +38,7 @@ El lenguaje usado es Java 17 usando Spring boot. En este caso he usado Linux Ubu
 
 **3. Compilar la aplicación. En este caso compilar utilizando el IDE IntelliJ IDEA.**
 
-**4. Ejecutar la aplicación asegurandose que Postgresql esté escuchando en su puerto configurado:
+**4. Ejecutar la aplicación asegurandose que Postgresql esté escuchando en su puerto configurado:**
       Parar ejecutar el jar, hay que ubicarse en la ruta donde se encuentre el artefacto y ejecutar el siguiente comandoÑ
 
       java -jar vaccination-0.0.1-SNAPSHOT.jar
@@ -68,8 +68,8 @@ Pasos:
 
 	        docker run -p 8080:8080 mi_kruger_challenge
 
-**6. Documentación. SWAGGER: **<br>
-Teniendo levantada la aplicación, acceder a la DocumentaciónÑ
+**6. Documentación. Swagger: **<br>
+Teniendo levantada la aplicación, acceder a la Documentación
 
 	http://localhost:8080/swagger-ui/index.html
 
