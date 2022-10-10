@@ -10,8 +10,8 @@ import java.util.List;
 public interface EmployeeService {
     Employee createEmployee(Employee employee);
     Employee updateEmployee(Employee employee);
-    void deleteEmployee(Long identification);
-    Employee obtainEmployeeByIdentification(Long identification);
+    void deleteEmployee(String identification);
+    Employee obtainEmployeeByIdentification(String identification);
     List<Employee> obtainListByVaccinationState(String vaccState);
     List<Employee> obtainListByVaccineType(VaccineType codType);
     List<Employee> obtainListByDateRange(LocalDate fecIni, LocalDate fecFin);

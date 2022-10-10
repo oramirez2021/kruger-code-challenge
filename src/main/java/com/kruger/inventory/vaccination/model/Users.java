@@ -21,7 +21,6 @@ public class Users {
     private Long id;
     @Column(name = "userName", nullable = false, length = 50)
     @NotBlank(message = "User name field is mandatory")
-    @Email(message = "Is not a valid email format")
     private String userName;
     @Column(name = "password", nullable = false, length = 50)
     @NotBlank(message = "Password name field is mandatory")

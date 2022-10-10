@@ -11,4 +11,5 @@ public interface UsersService {
     void addingRoleToUser(String userName, String roleName);
     Users obtainUser(String userName);
     List<Users> obtainUsers();
+    Long obtainTheInsertedId(Users user);
 }

@@ -11,9 +11,10 @@ import java.util.Date;
 import java.util.List;
 
 public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
-    Employee findByIdentification(Long identification);
+    void deleteByIdentification(String identification);
+    Employee findByIdentification(String identification);
 
-    List<Employee> findByVaccState(String vaccState);
+    List<Employee> findByVacState(String vacState);
     //@Query("select u from user u where upper(u.name) like upper(?1)")
     List<Employee> findByCodType(VaccineType codType);
 

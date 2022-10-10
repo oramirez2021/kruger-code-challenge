@@ -4,6 +4,7 @@ import com.kruger.inventory.vaccination.model.Employee;
 import com.kruger.inventory.vaccination.model.Users;
 import com.kruger.inventory.vaccination.model.VaccineType;
 import com.kruger.inventory.vaccination.service.EmployeeService;
+import com.kruger.inventory.vaccination.service.UsersService;
 import com.kruger.inventory.vaccination.useful.Generator;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -22,19 +23,25 @@ import java.util.List;
 @RestController @RequestMapping("/api") @RequiredArgsConstructor @Slf4j
 public class EmployeeController {
     private final EmployeeService employeeService;
-
+    private final UsersService usersService;
     @PostMapping("/employee")
     @Operation(
             tags ="Vaccine Controllers",
             description = "Shows a certain type of Vaccine by the code of Vaccine"
     )
     public ResponseEntity<Employee> createEmployee(@RequestBody @Valid Employee employee){
+        log.info("xxxxxx"+ employee);
         Users user = new Users();
         Generator generator = new Generator();
         String userName = generator.generateUsername(employee);
         String password = generator.generateRandomPassword(7);
         user.setUserName(userName);
         user.setPassword(password);
+        log.info("USUARIO** "+userName);
+        log.info("PASSWORD** "+password);
+        usersService.createUser(user);
+        log.info("IDDDDDDD "+usersService.obtainTheInsertedId(user));
+        employee.setId(user);
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/employee").toUriString());
         return ResponseEntity.created(uri).body(employeeService.createEmployee(employee));
     }
@@ -43,7 +50,7 @@ public class EmployeeController {
             tags ="Vaccine Controllers",
             description = "Shows a certain type of Vaccine by the code of Vaccine"
     )
-    public ResponseEntity<Employee> updateEmployee(@RequestBody @Valid Employee employee){
+    public ResponseEntity<Employee> updateEmployee(@RequestBody @Valid  Employee employee){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/employee").toUriString());
         return ResponseEntity.created(uri).body(employeeService.updateEmployee(employee));
     }
@@ -52,10 +59,10 @@ public class EmployeeController {
             tags ="Vaccine Controllers",
             description = "Shows a certain type of Vaccine by the code of Vaccine"
     )
-    public ResponseEntity<Employee> eliminateEmployee(@RequestParam Long identificacion){
+    public ResponseEntity<Employee> eliminateEmployee(@RequestParam String identification){
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/employee").toUriString());
-        Employee employee = employeeService.obtainEmployeeByIdentification(identificacion);
-        employeeService.deleteEmployee(identificacion);
+        Employee employee = employeeService.obtainEmployeeByIdentification(identification);
+        employeeService.deleteEmployee(identification);
         return ResponseEntity.created(uri).body(employee);
     }
    @Operation(

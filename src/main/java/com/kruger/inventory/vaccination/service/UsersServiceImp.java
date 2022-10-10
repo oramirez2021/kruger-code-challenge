@@ -18,6 +18,12 @@ import java.util.List;
 @Service @RequiredArgsConstructor @Transactional @Slf4j
 public class UsersServiceImp implements UsersService {
     private final UsersRepo usersRepo;
+
+    @Override
+    public Long obtainTheInsertedId(Users user) {
+        return user.getId();
+    }
+
     private final RoleRepo roleRepo;
     //private final PasswordEncoder passwordEncoder;
     /*@Override

@@ -55,7 +55,7 @@ public class VaccineTypeController {
     @GetMapping("/listVaccineTypes")
     @Operation(
             tags ="Vaccine Controllers",
-            description = "Shows all the Types of Vaccines those the Companny handle"
+            description = "Shows all the Types of Vaccines those the Company handle"
     )
     public ResponseEntity<List<VaccineType>> getVaccineTypes(){
         return ResponseEntity.ok().body(vaccineTypeService.obtainListVaccineTypes());

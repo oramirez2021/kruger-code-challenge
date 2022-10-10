@@ -15,9 +15,9 @@ import java.util.List;
 public class EmployeeServiceImp  implements EmployeeService{
     private final EmployeeRepo employeeRepo;
     @Override
-    public List<Employee> obtainListByVaccinationState(String vaccState) {
+    public List<Employee> obtainListByVaccinationState(String vacState) {
         log.info("Looking for Employees their vaccination state");
-        return employeeRepo.findByVaccState(vaccState);
+        return employeeRepo.findByVacState(vacState);
     }
 
     @Override
@@ -37,16 +37,16 @@ public class EmployeeServiceImp  implements EmployeeService{
     }
 
     @Override
-    public Employee obtainEmployeeByIdentification(Long identification) {
+    public Employee obtainEmployeeByIdentification(String identification) {
         Employee employee = employeeRepo.findByIdentification(identification);
         return employee;
     }
 
     @Override
-    public void deleteEmployee(Long identification) {
+    public void deleteEmployee(String identification) {
         Employee employee = employeeRepo.findByIdentification(identification);
         log.info("Eliminating Employee with name {}, ",employee.getNames());
-        employeeRepo.delete(employee);
+        employeeRepo.deleteByIdentification(identification);
     }
 
     @Override
